@@ -1,5 +1,6 @@
 package com.project.blog_platform.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,6 +20,7 @@ public class Post {
     @Column(nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user; // connection with a user

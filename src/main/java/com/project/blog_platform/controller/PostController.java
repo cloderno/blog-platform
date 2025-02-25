@@ -31,7 +31,6 @@ public class PostController {
         post.setUser(user);
         postRepository.save(post);
         return ResponseEntity.ok("Post created successfully");
-
     }
 
     @GetMapping("/user/{userId}")
